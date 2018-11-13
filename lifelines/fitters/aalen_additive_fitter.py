@@ -380,7 +380,7 @@ class AalenAdditiveFitter(BaseFitter):
 
         Returns the survival functions for the individuals
         """
-        return np.exp(-self.predict_cumulative_hazard(X))
+        return np.exp(-self.predict_cumulative_hazard(X).astype(np.float32))
 
     def predict_percentile(self, X, p=0.5):
         """
