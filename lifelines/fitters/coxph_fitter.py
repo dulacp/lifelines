@@ -479,7 +479,7 @@ See https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqwhat-is-complete-o
         Returns the partial hazard for the individuals, partial since the
         baseline hazard is not included. Equal to \exp{\beta X}
         """
-        return exp(self.predict_log_partial_hazard(X))
+        return exp(self.predict_log_partial_hazard(X).astype(np.float32))
 
     def predict_log_partial_hazard(self, X):
         """
